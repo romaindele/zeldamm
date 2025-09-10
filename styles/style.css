@@ -5,66 +5,104 @@
     box-sizing: border-box;
 }
 
-/* === Fond général === */
 body {
-    font-family: Arial, sans-serif; /* Police simple */
-    background: linear-gradient(135deg, #2e003e, #4a0072, #7b1fa2); /* Dégradé violet */
-    color: white;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #1e0b2b, #2a0f3f, #3b1c59); /* Violet sombre */
+    color: #ddd; /* Texte gris clair */
+}
+
+/* === HEADER avec vidéo === */
+header {
+    position: relative;
+    width: 100%;
     height: 100vh;
     overflow: hidden;
 }
 
-/* === Zone du header avec la vidéo === */
-header {
-    position: relative;  /* Permet de placer la vidéo + le texte par-dessus */
-    width: 100%;
-    height: 100vh;       /* Prend toute la hauteur de l’écran */
-}
-
-/* === Vidéo en arrière-plan === */
 header video {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;   /* Remplit tout sans se déformer */
-    z-index: -1;         /* Derrière le texte */
+    object-fit: cover;
+    z-index: -1;
 }
 
-/* === Bloc violet semi-transparent pour le texte === */
 .overlay {
     position: absolute;
-    top: 50%;            /* Centre vertical */
-    left: 50%;           /* Centre horizontal */
-    transform: translate(-50%, -50%); /* Ajuste pour être au centre exact */
-    background: rgba(98, 0, 153, 0.6); /* Violet transparent */
-    padding: 20px 30px;  /* Espacement interne */
-    border-radius: 10px; /* Coins arrondis */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(50, 20, 70, 0.7); /* Violet très sombre, semi-transparent */
+    padding: 20px 30px;
+    border-radius: 10px;
     text-align: center;
 }
 
-/* === Titre principal === */
 header h1 {
     font-size: 2.5rem;
     margin-bottom: 10px;
-    text-shadow: 0 0 5px black; /* Ombre pour bien voir le texte */
+    text-shadow: 0 0 8px #000;
 }
 
-/* === Sous-texte === */
 header p {
     font-size: 1.2rem;
-    text-shadow: 0 0 3px black;
+    text-shadow: 0 0 5px #000;
 }
-/* === Footer === */
-footer {
-    background: rgba(98, 0, 153, 0.8); /* Violet semi-transparent */
-    color: white;
+
+/* === NAVIGATION === */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(40, 20, 60, 0.95); /* Plus sombre et agréable */
+    padding: 0.8rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
+}
+
+.nav-center {
+    display: flex;
+    gap: 2rem;
+}
+
+nav a {
+    color: #ddd; /* Texte gris clair */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #e6c300; /* Doré doux au survol */
+    text-shadow: 0 0 5px #000;
+}
+
+nav a img {
+    height: 45px;
+    transition: transform 0.3s ease;
+}
+
+nav a img:hover {
+    transform: rotate(10deg) scale(1.1);
+}
+
+/* === SECTION CONTENU === */
+section {
+    padding: 3rem;
+    font-size: 1.2rem;
     text-align: center;
-    padding: 15px;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+}
+
+/* === FOOTER === */
+footer {
+    background: rgba(40, 20, 60, 0.95);
+    text-align: center;
+    padding: 1rem;
     font-size: 0.9rem;
-    text-shadow: 0 0 3px black; /* Ombre pour lisibilité */
+    color: #ccc;
 }
