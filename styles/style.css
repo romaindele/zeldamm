@@ -97,6 +97,139 @@ section {
     font-size: 1.2rem;
     text-align: center;
 }
+.intro {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background: rgba(60, 0, 80, 0.3);
+    border-radius: 15px;
+    color: #eee;
+    text-align: center;
+    line-height: 1.6;
+}
+.intro h2 {
+    color: #caa0ff;
+    margin-bottom: 1rem;
+}
+
+/* --- SECTION WISHLIST --- */
+.wishlist {
+    max-width: 900px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background: rgba(40, 0, 60, 0.4);
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(150, 0, 255, 0.3);
+    color: #eee;
+}
+
+.wishlist h2 {
+    text-align: center;
+    color: #d1a3ff;
+    margin-bottom: 2rem;
+}
+
+/* Chaque item */
+.item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: rgba(30, 0, 50, 0.6);
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    transition: background 0.3s;
+}
+
+.item:hover {
+    background: rgba(80, 0, 120, 0.6);
+}
+
+/* --- BOUTON SWITCH --- */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 54px;   /* un peu plus large pour contenir le rond */
+    height: 28px;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    inset: 0;
+    background-color: rgba(90, 0, 130, 0.6);
+    border-radius: 34px;
+    transition: 0.4s;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.3);
+}
+
+.slider::before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 4px;
+    bottom: 4px;
+    background-color: #ccc;
+    border-radius: 50%;
+    transition: 0.4s;
+}
+
+/* Ajustement de la translation pour le rond */
+.switch input:checked + .slider::before {
+    transform: translateX(26px); /* légèrement moins pour rester à l’intérieur */
+    background-color: #fff;
+}
+
+/* Changement couleur slider quand coché */
+.switch input:checked + .slider {
+    background-color: #a84fff;
+    box-shadow: 0 0 15px #b66aff, 0 0 25px #8f3cff;
+}
+/* Wishlist images grandes et adaptatives */
+.item img {
+    width: 120px;        /* plus grand pour les screenshots */
+    height: auto;        /* garde le ratio */
+    max-height: 150px;   /* limite pour ne pas casser le layout */
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* Responsive pour mobile */
+@media (max-width: 700px) {
+    .item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .item img {
+        width: 90%;
+        max-height: none;
+        margin-bottom: 0.5rem;
+    }
+}
+
+
+/* Image de l’objet */
+.item img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+/* Texte */
+.item .info h3 {
+    color: #caa0ff;
+    margin: 0;
+}
+
+.item .info p {
+    font-size: 0.95rem;
+    margin: 0.4rem 0 0 0;
+    line-height: 1.4;
+}
+
+
 
 /* === FOOTER === */
 footer {
